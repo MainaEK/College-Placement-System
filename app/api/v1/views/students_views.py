@@ -41,7 +41,7 @@ def register_student():
         abort(make_response(jsonify({'status': 400, 'message': 'Empty. Please fill in all required fields', 'errors': errors}), 400))
 
     """ Creates the student and returns feedback in json format"""
-    result = StudentModel().register_student(json_data)
+    result = StudentModel().register_student(data)
     
     """ Registers the university as a user"""
     UserModel().create_student(json_data)
