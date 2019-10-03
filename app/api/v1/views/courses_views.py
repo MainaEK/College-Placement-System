@@ -10,18 +10,18 @@ from ..schemas.schemas import CourseSchema
 @v1.route('/courses/all', methods=['GET'])
 def get_all_courses():
     '''Gets all courses'''
-    response = CourseModel().get_all()
+    response = CourseModel().return_data()
     return jsonify({'status' : 200,'data' : response}),200
 
 
-@v1.route('/courses/<int:course_index>', methods=['GET'])
-def get_specific_course(course_index):
+@v1.route('/courses/<int:course_id>', methods=['GET'])
+def get_specific_course(course_id):
     '''Checks if the course exists'''
-    if not CourseModel().check_exists("course_index",course_index):
+    if not CourseModel().check_exists("course_id",course_id):
         abort(make_response(jsonify({'status' : 404,'message' : 'Course not found'}),404))
         
     '''If the course_index exists it is then returned''' 
-    response = CourseModel().find('course_index',course_index)
+    response = CourseModel().find('course_id',course_id)
     return jsonify({'status' : 200,'data' : response}),200
 
     
@@ -41,8 +41,13 @@ def register_course():
         abort(make_response(jsonify({'status': 400, 'message': 'Empty. Please fill in all required fields', 'errors': errors}), 400))
 
     """ Creates the course and returns feedback in json format"""
-    result = CourseModel().register_course(data)
-    return jsonify({'status': 201, 'message': 'Course registered successfully', 'data': result}), 201
+    CourseModel().create_course(data)
+    result = CourseModel().find("course_id",data['course_id'])
+    if not result:
+        abort(make_response(jsonify({'status': 500, 'message': 'Unsuccessful entry'}), 500))
+    else:
+        return jsonify({'status': 201, 'message': 'Course registered successfully', 'data': result}), 201
+        
 
 
 @v1.route('/courses/<int:course_index>', methods=['DELETE'])
@@ -52,6 +57,7 @@ def delete_course(course_index):
         abort(make_response(jsonify({'status' : 404,'message' : 'Course not found'}),404))
         
     '''If the course exists it is then deleted and feedback returned ''' 
-    CourseModel().delete('course_index',course_index)
+    CourseModel().delete("course_index",course_index)
     if not CourseModel().check_exists("course_index",course_index):
         return jsonify({'status' : 200,'message' : 'Successfully deleted'}),200
+    

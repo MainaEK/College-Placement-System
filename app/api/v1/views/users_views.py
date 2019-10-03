@@ -1,7 +1,6 @@
 # standard imports
-from flask import Flask, jsonify, request, Response, json, abort, make_response, current_app
-import datetime
-from flask_jwt_extended import (JWTManager, jwt_required, create_access_token, get_jwt_identity)
+from flask import Flask, jsonify, request, Response, json, abort, make_response
+from flask_jwt_extended import create_access_token
 from werkzeug.security import check_password_hash
 
 # local imports
@@ -33,6 +32,6 @@ def login():
 
         """Logs in the user"""
     else:
-        access_token = create_access_token(identity=response['user_id'])
+        access_token = create_access_token(identity=response['isAdmin'])
 
-    return jsonify({'status': 200, 'data': [{'token': access_token, 'user': response}]}), 200
+    return jsonify({'status': 200, 'data': [{'token': access_token, 'message': 'Login Successful'}]}), 200

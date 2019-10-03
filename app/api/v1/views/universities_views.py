@@ -11,18 +11,18 @@ from ..schemas.schemas import UniversitiesSchema
 @v1.route('/universities/all', methods=['GET'])
 def get_all_universities():
     '''Gets all universities'''
-    response = UniversityModel().get_all()
+    response = UniversityModel().return_data()
     return jsonify({'status' : 200,'data' : response}),200
 
 
-@v1.route('/universities/<int:university_index>', methods=['GET'])
-def get_specific_university(university_index):
+@v1.route('/universities/<int:uni_id>', methods=['GET'])
+def get_specific_university(uni_id):
     '''Checks if the university exists'''
-    if not UniversityModel().check_exists("university_index",university_index):
+    if not UniversityModel().check_exists("uni_id",uni_id):
         abort(make_response(jsonify({'status' : 404,'message' : 'University not found'}),404))
         
-    '''If the university_index exists it is then returned''' 
-    response = UniversityModel().find('university_index',university_index)
+    '''If the uni_id exists it is then returned''' 
+    response = UniversityModel().find('uni_id',uni_id)
     return jsonify({'status' : 200,'data' : response}),200
 
     
@@ -41,21 +41,26 @@ def register_university():
         abort(make_response(jsonify({'status': 400, 'message': 'Empty. Please fill in all required fields', 'errors': errors}), 400))
 
     """ Creates the university and returns feedback in json format"""
-    result = UniversityModel().register_university(json_data)
+    UniversityModel().create_university(data)
     
     """ Registers the university as a user"""
-    UserModel().create_university(json_data)
+    UserModel().register_university(json_data)
     
-    return jsonify({'status': 201, 'message': 'University registered successfully', 'data': result}), 201
+    result = UniversityModel().find("uni_id",data['uni_id'])
+    if not result:
+        abort(make_response(jsonify({'status': 500, 'message': 'Unsuccessful entry'}), 500))
+    else:
+        return jsonify({'status': 201, 'message': 'University registered successfully', 'data': result}), 201
+    
 
 
-@v1.route('/universities/<int:university_index>', methods=['DELETE'])
-def delete_university(university_index):
+@v1.route('/universities/<int:uni_id>', methods=['DELETE'])
+def delete_university(uni_id):
     '''Checks if the university exists'''
-    if not UniversityModel().check_exists("university_index",university_index):
+    if not UniversityModel().check_exists("uni_id",uni_id):
         abort(make_response(jsonify({'status' : 404,'message' : 'University not found'}),404))
         
     '''If the university exists it is then deleted and feedback returned ''' 
-    UniversityModel().delete('university_index',university_index)
-    if not UniversityModel().check_exists("university_index",university_index):
+    UniversityModel().delete('uni_id',uni_id)
+    if not UniversityModel().check_exists("uni_id",uni_id):
         return jsonify({'status' : 200,'message' : 'Successfully deleted'}),200
