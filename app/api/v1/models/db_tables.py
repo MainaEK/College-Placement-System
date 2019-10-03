@@ -24,7 +24,6 @@ def set_up_tables():
         uni_id INTEGER PRIMARY KEY,
         uni_name VARCHAR(100) NOT NULL,
         email VARCHAR(200),
-        password VARCHAR(200) NOT NULL,
         registered_on TIMESTAMP WITHOUT TIME ZONE \
         DEFAULT (NOW() AT TIME ZONE 'utc'));"""    
         
@@ -42,8 +41,8 @@ def set_up_tables():
         CREATE TABLE IF NOT EXISTS students (
         student_id INTEGER PRIMARY KEY,
         student_name VARCHAR(100) NOT NULL,
-        grades VARCHAR(20) NOT NULL,
-        course_id INTEGER NOT NULL,
+        grades VARCHAR(20),
+        course_id INTEGER,
         FOREIGN KEY (course_id) REFERENCES courses(course_id) ON DELETE CASCADE,
         registered_on TIMESTAMP WITHOUT TIME ZONE \
         DEFAULT (NOW() AT TIME ZONE 'utc'));"""   
@@ -57,7 +56,7 @@ def create_admin(connect):
         """.format(generate_password_hash('Eric1234'))   
           
     # prevents trying duplicating admin if already exists
-    get_admin = """SELECT * from users WHERE username = 'admin'"""
+    get_admin = """SELECT * from users WHERE username = 'adminUser'"""
     cur = connect.cursor()
     get_admin = cur.execute(get_admin)
     get_admin = cur.fetchone()

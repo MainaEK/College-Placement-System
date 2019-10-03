@@ -22,9 +22,13 @@ class DatabaseConnection():
             cur = conn.cursor()
         except Exception as error:
             print(error)  
-               
+    
+    def connection(self):
+        """ Returns connection for the models """
+        return conn
+        
     def create_tables_and_admin(self):
-        """ creates all tables """
+        """ creates all tables and puts the admin """
         all_tables_to_create = set_up_tables()
         # print('Success')
         for query in all_tables_to_create:
@@ -49,9 +53,9 @@ class DatabaseConnection():
         return fetchedRow  
 
     def save_incoming_data_or_updates(self, query):
-            """ saves data passed as a query to the stated table """
-            cur.execute(query)
-            conn.commit()  
+        """ saves data passed as a query to the stated table """
+        cur.execute(query)
+        conn.commit()  
         
     def fetch_all_tables_rows(self, query):
         """ fetches all rows of data store """
