@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<title>s_dash</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" type="text/css" href="css/util.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+  <header class="w3-center w3-padding-16">
+      <h1 style="font-family:monospace; color: blue;">Colle_placement system</h1>
+  </header>
+<body>
+<div class="w3-padding-64"> 
+
+  <div class="w3-sidebar w3-bar-block" style="width:25%">
+    <h3 style="color: black; font-family: monospace;" class="w3-center">Welcome <br>{Names}</h3>
+    <table class="w3-table">
+      <tr>
+        <th>Subject</th>
+        <th>Grade</th>
+      </tr>
+      <tr>
+        <td>Mathematics</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td></td>
+      </tr>
+      <tr>
+          <td>Kiswahili</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Physics</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Chemistry</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>History</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Geography</td>
+          <td></td>
+      </tr>
+    </table>
+    <button class="w3-button w3-black">Log Out</button>
+  </div>
+  <style>
+
+    body{
+      background-image: url(img/bg.png)
+    }  
+      .form-inline {  
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+      }
+      
+      .form-inline label {
+        margin: 5px 10px 5px 0;
+      }
+      
+      .form-inline input {
+        vertical-align: middle;
+        margin: 5px 10px 5px 0;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+      }
+      
+      .form-inline button {
+        padding: 10px 20px;
+        background-color: dodgerblue;
+        border: 1px solid #ddd;
+        color: white;
+        cursor: pointer;
+      }
+      
+      .form-inline button:hover {
+        background-color: rgb(8, 17, 43);
+      }
+      
+      @media (max-width: 300px) {
+        .form-inline input {
+          margin: 10px 0;
+        }
+        
+        .form-inline {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+  </style>
+
+  <div style="margin-left:25%; width: 75%;">
+      <div class="w3-container">
+          <form class="form-inline" action="" style="color: slateblue; font-weight: bold;">
+            <input type="text" id="choice1" placeholder="1st Choice" name="choice1" style="width: 200px;">
+            <input type="text" id="choice2" placeholder="2nd Choice" name="choice2" style="width: 200px;">
+            <input type="text" id="choice3" placeholder="3rd Choice" name="choice3" style="width: 200px;">
+            <input type="text" id="choice4" placeholder="4th Choice" name="choice4" style="width: 200px;">
+            <input type="text" id="choice5" placeholder="5th Choice" name="choice5" style="width: 200px;">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="w3-padding-32">
+         <p class="w3-center" style="color:salmon;">
+            ALERT!
+          </p>
+        </div>
+        
+      <div class="w3-container w3-padding-16">
+          <form class="w3-container w3-card-4" action="">
+              <select class="w3-select" name="option">
+              <option value="" disabled selected>Choose a University of choice</option>
+              <option value="1">University of Nairobi</option>
+              <option value="2">Kenyatta University</option>
+              <option value="3">Strathmore University</option>
+              <option value="4">Multimedia University</option>
+              <option value="5">Jaramogi University</option>
+              </select><br><br>
+              <p><button class="w3-btn w3-red">Select</button></p>
+          </form>
+      </div>
+
+        <div class="w3-container w3-padding-64">
+
+          <div class="limiter">
+            <div class="container-table100">
+              <div class="wrap-table100">
+                  <div class="table2">
+        
+                    <div class="row header">
+                      <div class="cell">
+                        Course Code
+                      </div>
+                      <div class="cell">
+                        Course Title
+                      </div>
+                      <div class="cell">
+                        Requirements
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        31
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Vincent Williamson
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        iOS Developer
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        27
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Joseph Smith
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        Project Manager
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        26
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Justin Black
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        Front-End Developer
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        25
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Sean Guzman
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        Web Designer
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        20
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Keith Carter
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        Graphic Designer
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        32
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Austin Medina
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        Photographer
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        31
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Vincent Williamson
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        iOS Developer
+                      </div>
+                    </div>
+        
+                    <div class="row">
+                      <div class="cell" data-title="Course Code">
+                        28
+                      </div>
+                      <div class="cell" data-title="Course Title">
+                        Joseph Smith
+                      </div>
+                      <div class="cell" data-title="requirements">
+                        Project Manager
+                      </div>
+                    </div>
+        
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+        
+          <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+          <script src="vendor/bootstrap/js/popper.js"></script>
+          <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+          <script src="vendor/select2/select2.min.js"></script>
+          <script src="js/main.js"></script>
+        </div>
+
+    <footer class="w3-center w3-padding-16" style="margin-bottom: 0px;">
+        <p>E.Kraal Innovation Hub<br>Emani Business Park<br>Pangani</p>
+        <p>Powered by <a href="https://e-kraal.com/" title="G1 E.Kraal" target="_blank" class="w3-hover-text-green">E.Kraal</a>Group 1<br></p>
+    </footer>
+
+</body>
+
+</html>

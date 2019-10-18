@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<title>signup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style type="text/css">
+  input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+    }
+    .container {
+            padding: 14px;
+          }
+          .content {
+  max-width: 500px;
+  margin: auto;
+  }
+  body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("");
+    min-height: 75%;
+  }
+
+  .menu {
+    display: none;
+  }
+</style>
+<!--Nav Bar-->
+<header>
+<div class="w3-top">
+    <div class="w3-row w3-black">
+      <div class="w3-half s3">
+        <a href="index.html" class="w3-button w3-block w3-black"><h4>HOME</h4></a>
+      </div>
+      <div class="w3-half s3">
+        <a href="#" class="w3-button w3-block w3-black"></a>
+      </div>
+    </div>
+</div>
+</header>
+<div class="w3-sand w3-large"></div>
+<body class=" w3-padding-64">
+
+    <div class="content">
+        <form class="w3-padding-64 w3-center" action="/universities/new" method="POST" style="max-width:400px"> 
+          <p style="color: royalblue"><b>RREGISTER YOUR UNIVERSITY WITH US</b></p>
+          <p><b>Note: </b>The <b style="color: red">Institution ID </b>should be the one assigned to you by CUE </p>
+            <div class="w3-padding"> 
+                <label for="iid"><b>Institution ID</b></label>
+                <input type="text" placeholder="Enter your Institution ID" name="iid" required>
+
+                <label for="uname"><b>University Name</b></label>
+                <input type="text" placeholder="University Name" name="uname" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Email" name="email" required>
+
+                <label for="pass"><b>Password</b></label>
+                <input type="password" placeholder="Key in your Password" name="pass" required>
+                
+                <button type="submit" class="w3-btn w3-black">Sign_Up</button>
+            </div>
+        </form> 
+    </div>
+
+</body>
+<footer class="w3-center w3-padding-64 w3-black w3-hover-black w3-large">
+  <p>E.Kraal Innovation Hub<br>Emani Business Park<br>Pangani</p>
+  <p>Powered by <a href="https://e-kraal.com/" title="G1 E.Kraal" target="_blank" class="w3-hover-text-green">E.Kraal</a>Group 1<br></p>
+</footer>
+</html>

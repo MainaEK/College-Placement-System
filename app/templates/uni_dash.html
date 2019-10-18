@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>university</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-black">
+        <a href="#" class="w3-bar-item w3-border w3-button w3-mobile"><h3>Home</h3></a>
+        <a href="#courses" class="w3-bar-item w3-border w3-button w3-mobile"><h3>Registered Courses</h3></a>
+        <a href="#" class="w3-bar-item w3-button w3-border w3-mobile w3-red w3-right"><h3>Sign Out</h3></a>
+    </div>
+</div>
+<body class="">
+    <div class="w3-container w3-center w3-row w3-padding-64" id="home">
+        <form style="margin:20px 60px;">
+            <fieldset>
+                <legend>Register Course</legend>
+                        <div class="w3-quarter w3-padding-16">
+                        <label>Course Code</label>
+                        <input class="w3-input w3-border-black w3-hover-pale-green" type="text">
+                        </div>
+                
+                        <div class="w3-threequarter w3-padding-16">
+                        <label>Course Title</label>
+                        <input class="w3-input w3-border-black w3-hover-pale-red" type="text">
+                        </div>
+                
+                        <div class="w3-row w3-padding-16">
+                        <label><b>Course Requirements</b></label><br><br>
+                        <select name="requirements" class="">
+                        <option name="groupA" value="Maths, English, Kiswahili, Chemistry, 85pts">Maths, English, Kiswahili, Chemistry, 85pts</option>
+                        <option name="groupB" value="Maths, English, Physics, Geography, 80pts">Maths, English, Physics, Geography, 80pts</option>
+                        <option name="groupC" value="Maths, 2Science, History, 70pts">Maths, 2Science, History, 70pts</option>
+                        </select>
+                        </div>
+                        <div class="w3-padding-16">
+                        <input class="w3-btn w3-teal aside" type='submit' value='submit'/>
+                        </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="w3-container w3-center w3-row" id="courses">
+            <h3 class="w3-padding-16">==Your Registered Courses==</h3>
+            <div class="w3-responsive">
+                <table class="w3-table-all w3-bordered">
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                    </tr>
+                    <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                    </tr>
+                    <tr>
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                    </tr>
+                    <tr>
+                        <td>Kisma</td>
+                        <td>Jibril</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+<!-- End page content -->
+</div>
+</body>
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16" style="margin-bottom: 0px;">
+  <p>E.Kraal Innovation Hub<br>Emani Business Park<br>Pangani</p>
+  <p>Powered by <a href="https://e-kraal.com/" title="G1 E.Kraal" target="_blank" class="w3-hover-text-green">E.Kraal</a>Group 1<br></p>
+</footer>
+</html>
