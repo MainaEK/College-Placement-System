@@ -1,6 +1,6 @@
 '''Creating app'''
 import os
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_jwt_extended import (JWTManager)
 from instance.config import app_config
 from app.api.v1.views.students_views import v1 as students_blueprint
@@ -31,7 +31,25 @@ def create_app(config_name):
     
     app.config['JWT_SECRET_KEY'] = 'secret'
     jwt = JWTManager(app)
+    
+    @app.route('/') 
+    def index():
+        return render_template('index.html')
 
+    @app.route('/university/registration')
+    def unireg():
+        return render_template('uni_signup.html')
+    
+    @app.route('/university/dashboard')
+    def unidash():
+        return render_template('uni_dash.html')
+    
+        
+    @app.route('/student/dash')
+    def studentdash():
+        return render_template('s_dash.html')
+    
+    
     @app.errorhandler(404)
     def page_not_found(error):
         return jsonify({
@@ -46,3 +64,5 @@ def create_app(config_name):
             'message': 'Sorry but your request could not be processed'}), 500
     
     return app
+
+

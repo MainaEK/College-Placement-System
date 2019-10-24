@@ -36,7 +36,7 @@
       <a href="#logins" class="w3-button w3-block w3-black">LOGIN</a>
     </div>
     <div class="w3-col s3">
-      <a href="signup.html" class="w3-button w3-block w3-black">UNIVERSITY REGISTRATION</a>
+      <a href="{{ url_for('unireg') }}" class="w3-button w3-block w3-black">UNIVERSITY REGISTRATION</a>
     </div>
   </div>
 </div>
@@ -199,17 +199,17 @@
           
           <div id="id01" class="modal">
             
-            <form class="modal-content animate" action="/action_page.php" method="GET">
+            <form class="modal-content animate" action="{{ url_for('studentdash') }}" method="POST">
               <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
               </div>
           
               <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
           
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Your NEMIS UPI " name="psw" required>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter NEMIS UPI" name="password" required>
                   
                 <button type="submit">Login</button>
                 <label>
@@ -241,7 +241,7 @@
           <body>
           <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">INSTITUTION LOGIN</button>
           <div id="id01" class="modal">
-          <form class="modal-content animate" action="/action_page.php">
+          <form class="modal-content animate" action="" method="POST"> 
                 <div class="imgcontainer">
                   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 </div>
@@ -253,7 +253,7 @@
                   <label for="psw"><b>Password</b></label>
                   <input type="password" placeholder="Enter Password" name="psw" required>
                     
-                  <button type="submit">Login</button>
+                  <a href="{{ url_for('unidash') }}"><button type="submit">Login</button></a>
                   <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                   </label>

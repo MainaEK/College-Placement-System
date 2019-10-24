@@ -67,7 +67,4 @@ def delete_university(uni_id):
         return jsonify({'status' : 200,'message' : 'Successfully deleted'}),200
     
     
-    
-@v1.route('/')
-def home():
-    return render_template('uni_signup.html')
+

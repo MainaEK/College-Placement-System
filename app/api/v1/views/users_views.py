@@ -1,13 +1,11 @@
 # standard imports
-from flask import Flask, jsonify, request, Response, json, abort, make_response
+from flask import Flask, jsonify, request, Response, json, abort, make_response, render_template
 from flask_jwt_extended import create_access_token
 from werkzeug.security import check_password_hash
 
 # local imports
 from ..models.users_models import UserModel
 from ...v1 import v1
-
-
 
 @v1.route('/auth/login', methods=['POST'])
 def login():
@@ -35,3 +33,4 @@ def login():
         access_token = create_access_token(identity=response['isAdmin'])
 
     return jsonify({'status': 200, 'data': [{'token': access_token, 'message': 'Login Successful'}]}), 200
+    

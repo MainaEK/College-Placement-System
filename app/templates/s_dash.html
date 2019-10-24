@@ -20,42 +20,18 @@
 <div class="w3-padding-64"> 
 
   <div class="w3-sidebar w3-bar-block" style="width:25%">
-    <h3 style="color: black; font-family: monospace;" class="w3-center">Welcome <br>{Names}</h3>
+    <h3 style="color: black; font-family: monospace;" class="w3-center">Welcome <br>{{username}}</h3>
     <table class="w3-table">
       <tr>
-        <th>Subject</th>
         <th>Grade</th>
       </tr>
       <tr>
-        <td>Mathematics</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>English</td>
-        <td></td>
-      </tr>
-      <tr>
-          <td>Kiswahili</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>Physics</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>Chemistry</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>History</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>Geography</td>
-          <td></td>
+        <td>{{ grade }}</td>
       </tr>
     </table>
-    <button class="w3-button w3-black">Log Out</button>
+    <br>
+    <br>
+    <a href="{{ url_for('index') }}"><button class="w3-button w3-black">Log Out</button></a>
   </div>
   <style>
 
